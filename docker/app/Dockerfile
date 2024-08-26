@@ -31,9 +31,6 @@ WORKDIR /app
 # Copy project files to the container
 COPY . /app
 
-# Install PHP dependencies via Composer
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev --no-scripts
-
 # Clean up
 RUN apt-get clean \
     && rm -rf /var/lib/apt/lists/*
